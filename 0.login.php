@@ -8,9 +8,6 @@ $sql = "select loginID,role,level from user where password=PASSWORD(?);";
 $stmt = mysqli_prepare($db, $sql );
 mysqli_stmt_bind_param($stmt, "s", $password); //bind parameters with variables
 mysqli_stmt_execute($stmt);
-echo{
-	"hello"
-}
 $result = mysqli_stmt_get_result($stmt); 
 if ($rs = mysqli_fetch_assoc($result)) {
 	if ($rs['loginID'] == $loginID) {
